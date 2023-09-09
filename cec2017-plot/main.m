@@ -2,19 +2,14 @@ clc
 clear
 close all
 addpath(genpath(pwd))
-a=1;
+fhd=str2func('cec17_func');
 dimension=30;
 lowerbound= -100;
 upperbound = 100;
-Max_iterations=500; % ×î´óµü´úÊı
-pop=30;             % ÖÖÈº´óĞ¡
-a=1;
-value=[];
+Max_iterations=500; % æœ€å¤§è¿­ä»£æ•°
+pop=30;             % ç§ç¾¤å¤§å°
 %%
-fhd=str2func('cec17_func');
-   
-func_num=30;    % ²âÊÔº¯ÊıÃû     25.28.29.30
-Fun_name=['F' num2str(func_num)]; 
+func_num=1;    % æµ‹è¯•å‡½æ•°ï¼ˆ1-30ï¼‰
 
 [~,~,BestforAEO]=AEO(pop,Max_iterations,lowerbound,upperbound,dimension,fhd,func_num);
 [~,~,BestforSSA]=SSA(pop,Max_iterations,lowerbound,upperbound,dimension,fhd,func_num);
@@ -25,6 +20,7 @@ Fun_name=['F' num2str(func_num)];
 [BestforECOOT,~,~]=ECOOT(pop,Max_iterations,lowerbound,upperbound,dimension,fhd,func_num);
 [BestforCOOT,~,~]=COOT(pop,Max_iterations,lowerbound,upperbound,dimension,fhd,func_num);
 [~,~,BestforAVOA]=AVOA(pop,Max_iterations,lowerbound,upperbound,dimension,fhd,func_num);
+
 t=1:1:Max_iterations;
 semilogy(t,BestforPSO,'y-+','Color',[1 0.07843 0.57647]','linewidth',1,'MarkerIndices',1:15:Max_iterations)
 hold on
@@ -42,9 +38,9 @@ semilogy(t,BestforCOOT,'d--','Color',[0.5451 0.53725 0.53725]','linewidth',1,'Ma
 hold on
 semilogy(t,BestforECOOT,'r-*','linewidth',1,'MarkerIndices',1:15:Max_iterations)
 hold on
+
 legend('PSO','WOA','BOA','HHO','AEO','AVOA','COA','ECOA')
-
-
+Fun_name=['F' num2str(func_num)]; 
 title( Fun_name);
-xlabel('µü´ú´ÎÊı');
-ylabel('ÊÊÓ¦¶ÈÖµ');
+xlabel('è¿­ä»£æ¬¡æ•°');
+ylabel('é€‚åº”åº¦å€¼');
