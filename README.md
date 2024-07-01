@@ -7,4 +7,4 @@ Abstract: In response to the limitations of weak global search capability, slow 
 
 Experimental results:
 
-![Comparison of statistical results of CEC2017 test functions](https://github.com/ZHANG-JiXiang/Lightweight-Transformer-for-fault-diagnosis/blob/main/png/Figure_XJTUGearbox.jpg)
+![Comparison of statistical results of CEC2017 test functions](https://github.com/ZHANG-JiXiang/ECOOT-cec2017/blob/main/Comparison%20of%20statistical%20results%20of%20CEC2017%20test%20functions.png)
